@@ -11,6 +11,7 @@ class FeaturedHeading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // make distance below, see in home.dart
     return Padding(
       padding: EdgeInsets.only(
         top: screenSize.height * 0.06,
@@ -21,15 +22,15 @@ class FeaturedHeading extends StatelessWidget {
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-              Text(
-              'Featured',
-              style: TextStyle(
-                  fontSize: 36,
-                  fontFamily: 'Raleway',
-                  fontWeight: FontWeight.bold,
-                  color:Color(0xFF263b5e)
-              ),
-            ),
+                Text(
+                'Featured',
+                style: TextStyle(
+                    fontSize: 36,
+                    fontFamily: 'Raleway',
+                    fontWeight: FontWeight.bold,
+                    color:Color(0xFF115740)
+                    ),
+                ),
                 Expanded(
                   child: Text(
                     'Clue of the wooden cottage',

@@ -18,8 +18,11 @@ class FeaturedTiles extends StatelessWidget {
   final List<String> title = ['Sci-fi', 'Photography', 'Romance'];
 
   @override
+  // whenever change screen, build() is fired
   Widget build(BuildContext context) {
-    return ResponsiveWidget.isSmallScreen(context)
+    return
+      /*
+      ResponsiveWidget.isSmallScreen(context)
         ? Padding(
             padding: EdgeInsets.only(top: screenSize.height / 50),
             child: SingleChildScrollView(
@@ -68,8 +71,11 @@ class FeaturedTiles extends StatelessWidget {
               ),
             ),
           )
-        : Padding(
+        : */
+      Padding(
             padding: EdgeInsets.only(
+              // whenever change screen, build() is fired
+              // responsive padding setting
               top: screenSize.height * 0.06,
               left: screenSize.width / 15,
               right: screenSize.width / 15,
@@ -77,33 +83,46 @@ class FeaturedTiles extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+
+                // dynamic widget generate: Iterable.generate
+                // ... means all elements of list for Iterable
                 ...Iterable<int>.generate(assets.length).map(
                   (int pageIndex) => Column(
                     children: [
+
+
+
                       SizedBox(
+                        // dynamic
                         height: screenSize.width / 6,
                         width: screenSize.width / 3.8,
+
                         child: Container(
                           decoration: BoxDecoration(
                            borderRadius: BorderRadius.circular(20.0),
-                            image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: AssetImage(
-                              assets[pageIndex],
+                              image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: AssetImage(
+                                  // image list on top
+                                  assets[pageIndex],
                              // fit: BoxFit.cover,
-                            ),
-                            ),
-                            boxShadow: [
-                              BoxShadow(
-                                offset: Offset(0, 10),
-                                blurRadius: 20,
-                                spreadRadius: 5,
-                                color:Colors.grey.withOpacity(0.3),
-                              )
-                            ]
+                                   ),
+                                ),
+                              boxShadow: [
+                                BoxShadow(
+                                  offset: Offset(0, 10),
+                                  blurRadius: 20,
+                                  spreadRadius: 5,
+                                  color:Colors.grey.withOpacity(0.3),
+                                )
+                              ]
                           ),
                         ),
                       ),
+
+
+
+                      // padding between image and text
                       Padding(
                         padding: EdgeInsets.only(
                           top: screenSize.height / 70,
@@ -118,6 +137,10 @@ class FeaturedTiles extends StatelessWidget {
                         ),
                       ),
                     ],
+
+
+
+
                   ),
                 ),
               ],

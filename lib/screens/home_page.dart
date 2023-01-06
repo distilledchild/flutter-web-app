@@ -38,26 +38,40 @@ class _HomePageState extends State<HomePage> {
         : 1;
 
     return Scaffold(
-      body: Column(
-          children: [
-            Stack(
-              children: [
-                Container(
-                  child: SizedBox(
-                    height: screenSize.height * 0.65,
-                    width: screenSize.width,
-                    child: Image.asset(
-                      'assets/images/background.png',
-                      fit: BoxFit.cover,
+      extendBodyBehindAppBar: true, // overlap center image and app bar, so extend body image up to screen top
+      appBar: PreferredSize(
+        preferredSize: Size(screenSize.width, 70),
+        child: TopBarContents(_opacity),
+      ),
+      body: SingleChildScrollView( // making scrollable page
+        child: Column( // right click, then wrap up with SingleChildScrollView
+            children: [
+              Stack(
+                children: [
+                  Container(
+                    child: SizedBox(
+                      height: screenSize.height * 0.65,
+                      width: screenSize.width,
+                      child: Image.asset(
+                        'assets/images/background.png',
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
-                ),
+                  Column(
+                    children: [
+                      FloatingQuickAccessBar(screenSize: screenSize),
+                      FeaturedHeading(screenSize: screenSize),
+                      FeaturedTiles(screenSize: screenSize),
+                      MainHeading(screenSize: screenSize)
+                    ],
+                  )
+                ],
+              ),
 
-              ],
-            ),
-
-          ],
-        ),
+            ],
+          ),
+      ),
 
     );
   }

@@ -25,9 +25,7 @@ class _TopBarContentsState extends State<TopBarContents> {
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
 
-    return PreferredSize(
-      preferredSize: Size(screenSize.width, 70),
-      child: Container(
+    return Container(
         color: Colors.white.withOpacity(widget.opacity),
         child: Padding(
           padding: EdgeInsets.all(20),
@@ -40,9 +38,9 @@ class _TopBarContentsState extends State<TopBarContents> {
                   children: [
                     SizedBox(width: screenSize.width/4,),
                     Text(
-                      'Author',
+                      'ROMANS',
                       style: TextStyle(
-                        color: Color(0xFF077bd7),
+                        color: Color(0xFF115740),
                         fontSize: 26,
                         fontFamily: 'Raleway',
                         fontWeight: FontWeight.w900,
@@ -50,7 +48,7 @@ class _TopBarContentsState extends State<TopBarContents> {
                       ),
                     ),
                     SizedBox(width: screenSize.width / 15),
-                    InkWell(
+                    InkWell( // usually not necessary
                       onHover: (value) {
                         setState(() {
                           value
@@ -66,8 +64,8 @@ class _TopBarContentsState extends State<TopBarContents> {
                             'Home',
                             style: TextStyle(
                                 color: _isHovering[0]
-                                    ? Color(0xFF077bd7)
-                                    : Color(0xFF077bd7),
+                                    ? Color(0xFF00965E)
+                                    : Color(0xFF115740),
                                 fontWeight: FontWeight.bold,
                                 fontSize: 16
                             ),
@@ -81,21 +79,132 @@ class _TopBarContentsState extends State<TopBarContents> {
                             child: Container(
                               height: 2,
                               width: 20,
-                              color: Color(0xFF051441),
+                              color: Color(0xFFF6921E),
                             ),
                           )
                         ],
                       ),
                     ),
-
+                    SizedBox(width: screenSize.width / 15),
+                    InkWell( // usually not necessary
+                      onHover: (value) {
+                        setState(() {
+                          value
+                              ? _isHovering[1] = true
+                              : _isHovering[1] = false;
+                        });
+                      },
+                      onTap: () {},
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            'About',
+                            style: TextStyle(
+                                color: _isHovering[1]
+                                    ? Color(0xFF00965E)
+                                    : Color(0xFF115740),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16
+                            ),
+                          ),
+                          SizedBox(height: 5),
+                          Visibility(
+                            maintainAnimation: true,
+                            maintainState: true,
+                            maintainSize: true,
+                            visible: _isHovering[1],
+                            child: Container(
+                              height: 2,
+                              width: 20,
+                              color: Color(0xFFF6921E),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    SizedBox(width: screenSize.width / 15),
+                    InkWell( // usually not necessary
+                      onHover: (value) {
+                        setState(() {
+                          value
+                              ? _isHovering[2] = true
+                              : _isHovering[2] = false;
+                        });
+                      },
+                      onTap: () {},
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            'History',
+                            style: TextStyle(
+                                color: _isHovering[2]
+                                    ? Color(0xFF00965E)
+                                    : Color(0xFF115740),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16
+                            ),
+                          ),
+                          SizedBox(height: 5),
+                          Visibility(
+                            maintainAnimation: true,
+                            maintainState: true,
+                            maintainSize: true,
+                            visible: _isHovering[2],
+                            child: Container(
+                              height: 2,
+                              width: 20,
+                              color: Color(0xFFF6921E),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    SizedBox(width: screenSize.width / 15),
+                    InkWell( // usually not necessary
+                      onHover: (value) {
+                        setState(() {
+                          value
+                              ? _isHovering[3] = true
+                              : _isHovering[3] = false;
+                        });
+                      },
+                      onTap: () {},
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            'Contact',
+                            style: TextStyle(
+                                color: _isHovering[3]
+                                    ? Color(0xFF00965E)
+                                    : Color(0xFF115740),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16
+                            ),
+                          ),
+                          SizedBox(height: 5),
+                          Visibility(
+                            maintainAnimation: true,
+                            maintainState: true,
+                            maintainSize: true,
+                            visible: _isHovering[3],
+                            child: Container(
+                              height: 2,
+                              width: 20,
+                              color: Color(0xFFF6921E),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
-
             ],
           ),
         ),
-      ),
-    );
+      );
   }
 }

@@ -26,11 +26,12 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
   ];
 
   List<Widget> generateRowElements() {
+    // empty list
     rowElements.clear();
     for (int i = 0; i < items.length; i++) {
       Widget elementTile = InkWell(
         splashColor: Colors.transparent,
-        hoverColor: Colors.blue,
+        hoverColor: Colors.transparent,
         onHover: (value) {
           setState(() {
             value ? _isHovering[i] = true : _isHovering[i] = false;
@@ -44,7 +45,7 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
           ),
         ),
       );
-      Widget spacer = SizedBox(
+      Widget spacer = SizedBox( // vertical line
         height: widget.screenSize.height / 20,
         child: VerticalDivider(
           width: 1,
@@ -67,6 +68,7 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
       heightFactor: 1,
       child: Padding(
         padding: EdgeInsets.only(
+          // screenSize comes from home_page.dart
           top: widget.screenSize.height * 0.60,
           left: ResponsiveWidget.isSmallScreen(context)
               ? widget.screenSize.width / 12
@@ -75,7 +77,20 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
               ? widget.screenSize.width / 12
               : widget.screenSize.width / 5,
         ),
-        child: Container(),
+        child: Card(
+          elevation: 5,
+          child: Padding(
+            padding: EdgeInsets.only(
+              top:this.widget.screenSize.height/50,
+              bottom: this.widget.screenSize.height/50,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              // Row takes children
+              children: generateRowElements(),
+            )
+          ),
+        ),
       ),
     );
   }
