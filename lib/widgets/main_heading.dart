@@ -21,6 +21,7 @@ class MainHeading                                                               
               'Knowledge diversity',
               textAlign: TextAlign.center,
               style: TextStyle(
+                color: Color(0xFF115740),
                 fontSize: 40,
                 fontFamily: 'Montserrat',
                 fontWeight: FontWeight.bold,

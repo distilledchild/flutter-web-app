@@ -53,18 +53,21 @@ class _MainCarouselState extends State<MainCarousel> {
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
-    var imageSliders = generateImageTiles(screenSize);
+    var imageSliders = generateImageTiles(screenSize); //dynamic generate
 
+    // font and pics are stacked
     return Stack(
       children: [
         CarouselSlider(
           items: imageSliders,
           options: CarouselOptions(
+            //check the difference for each functions, enlargeCenterPage
               enlargeCenterPage: true,
               aspectRatio: 18 / 8,
-              autoPlay: true,
+              // autoPlay: true,
               onPageChanged: (index, reason) {
                 setState(() {
+                  debugPrint(index.toString());
                   _current = index;
                   for (int i = 0; i < imageSliders.length; i++) {
                     if (i == index) {
@@ -80,7 +83,7 @@ class _MainCarouselState extends State<MainCarousel> {
         ),
         AspectRatio(
           aspectRatio: 18 / 8,
-          child: Center(
+          child: Center( // make text in the center
             child: Text(
               places[_current],
               style: TextStyle(
@@ -92,7 +95,7 @@ class _MainCarouselState extends State<MainCarousel> {
             ),
           ),
         ),
-         AspectRatio(
+         AspectRatio( // related to showing text menu
                 aspectRatio: 17 / 8,
                 child: Center(
                   heightFactor: 1,
@@ -110,7 +113,7 @@ class _MainCarouselState extends State<MainCarousel> {
                             top: screenSize.height / 50,
                             bottom: screenSize.height / 50,
                           ),
-                          child: Row(
+                          child: Row( //places by Row()
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               for (int i = 0; i < places.length; i++)

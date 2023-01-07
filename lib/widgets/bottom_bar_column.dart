@@ -31,6 +31,36 @@ class BottomBarColumn extends StatelessWidget {
           SizedBox(
             height: 10,
           ),
+          Text(
+            s1,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 18,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Text(
+            s2,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 18,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Text(
+            s3,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 18,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
         ],
       ),
     );

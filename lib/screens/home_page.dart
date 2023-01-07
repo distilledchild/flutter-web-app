@@ -18,6 +18,8 @@ class _HomePageState extends State<HomePage> {
   double _scrollPosition = 0;
   double _opacity = 0;
 
+  // save pixel positions into the variable of setState
+  // every scroller has listeners
   _scrollListener() {
     setState(() {
       _scrollPosition = _scrollController.position.pixels;
@@ -36,7 +38,7 @@ class _HomePageState extends State<HomePage> {
     _opacity = _scrollPosition < screenSize.height * 0.40
         ? _scrollPosition / (screenSize.height * 0.40)
         : 1;
-
+      debugPrint(_opacity.toString());
     return Scaffold(
       extendBodyBehindAppBar: true, // overlap center image and app bar, so extend body image up to screen top
       appBar: PreferredSize(
@@ -44,6 +46,8 @@ class _HomePageState extends State<HomePage> {
         child: TopBarContents(_opacity),
       ),
       body: SingleChildScrollView( // making scrollable page
+        // SingleChiScrollView has controller
+        controller: _scrollController, // This must be added
         child: Column( // right click, then wrap up with SingleChildScrollView
             children: [
               Stack(
@@ -58,12 +62,17 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
+
                   Column(
                     children: [
                       FloatingQuickAccessBar(screenSize: screenSize),
                       FeaturedHeading(screenSize: screenSize),
                       FeaturedTiles(screenSize: screenSize),
-                      MainHeading(screenSize: screenSize)
+                      MainHeading(screenSize: screenSize),
+                      MainCarousel(),
+                      //in order to get padding b/w mainCarousel and bottomBar, USE SizedBox
+                      SizedBox(height: screenSize.height/10),
+                      BottomBar(),
                     ],
                   )
                 ],
