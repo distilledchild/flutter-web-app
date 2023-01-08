@@ -8,6 +8,8 @@ import 'package:flutter_web/widgets/menu_drawer.dart';
 import 'package:flutter_web/widgets/top_bar_contents.dart';
 import 'package:flutter/material.dart';
 
+// layout.dart
+
 // scrollController -> Stateful
 class HomePage extends StatefulWidget {
   @override
@@ -51,24 +53,25 @@ class _HomePageState extends State<HomePage> {
       extendBodyBehindAppBar: true, // overlap center image and app bar, so extend body image up to screen top
       // property for scaffold: appbar
       // 800 px is for typical mobile device
-        appBar: screenSize.width < 800 ? AppBar(
+        appBar: screenSize.width < 800 ?
+        AppBar(
           // iconThem is only for hamburger menu
           iconTheme: IconThemeData(color: Color(0xFFF6921E)),
           elevation: 0,
           backgroundColor: Colors.white.withOpacity(_opacity),
           centerTitle: true,
           title: Text(
-            'ROMANS',
+            'Distilled Child',
             style: TextStyle(
               color: Color(0xFF115740),
               fontSize: 26,
-              fontFamily: 'Raleway',
+              fontFamily: 'Poppins',
               fontWeight: FontWeight.w900,
               letterSpacing: 3,
             ),
           ),
-        ): PreferredSize(preferredSize: Size(screenSize.width, 70),
-          // Class topbarcontents
+        ): PreferredSize(preferredSize: Size(screenSize.width, 150,),
+        // TopBarContents size setting using preferredSize
           child: TopBarContents(_opacity),
         ),
       // drawer is for showing menu in mobile device, and it is hidden in desktop
@@ -87,7 +90,7 @@ class _HomePageState extends State<HomePage> {
                       height: screenSize.height * 0.65,
                       width: screenSize.width,
                       child: Image.asset(
-                        'assets/images/background.png',
+                        'assets/images/home_page_upload_scaled.png',
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -109,11 +112,9 @@ class _HomePageState extends State<HomePage> {
                   )
                 ],
               ),
-
             ],
           ),
       ),
-
     );
   }
 }

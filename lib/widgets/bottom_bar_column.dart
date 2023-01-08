@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../components/shared_text.dart';
 
 class BottomBarColumn extends StatelessWidget {
   final String heading;
@@ -24,7 +25,8 @@ class BottomBarColumn extends StatelessWidget {
             heading,
             style: TextStyle(
               color: Colors.white,
-              fontSize: 18,
+              fontSize: 16,
+              fontFamily: 'Poppins',
             ),
           ),
           SizedBox(
@@ -34,7 +36,8 @@ class BottomBarColumn extends StatelessWidget {
             s1,
             style: TextStyle(
               color: Colors.white,
-              fontSize: 18,
+              fontSize: 16,
+              fontFamily: 'Poppins',
             ),
           ),
           SizedBox(
@@ -44,7 +47,8 @@ class BottomBarColumn extends StatelessWidget {
             s2,
             style: TextStyle(
               color: Colors.white,
-              fontSize: 18,
+              fontSize: 16,
+              fontFamily: 'Poppins'
             ),
           ),
           SizedBox(
@@ -54,7 +58,8 @@ class BottomBarColumn extends StatelessWidget {
             s3,
             style: TextStyle(
               color: Colors.white,
-              fontSize: 18,
+              fontSize: 16,
+              fontFamily: 'Poppins'
             ),
           ),
         ],

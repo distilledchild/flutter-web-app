@@ -31,7 +31,7 @@ class FeaturedHeading extends StatelessWidget {
                 'Featured',
                 style: TextStyle(
                     fontSize: 36,
-                    fontFamily: 'Raleway',
+                    fontFamily: 'Poppins',
                     fontWeight: FontWeight.bold,
                     color:Color(0xFF115740)
                 ),
@@ -56,16 +56,18 @@ class FeaturedHeading extends StatelessWidget {
                 'Featured',
                 style: TextStyle(
                     fontSize: 36,
-                    fontFamily: 'Raleway',
+                    fontFamily: 'Poppins',
                     fontWeight: FontWeight.bold,
                     color:Color(0xFF115740)
                     ),
                 ),
                 Expanded(
                   child: Text(
-                    'Clue of the wooden cottage',
+                    'Top priorities',
                     style: TextStyle(
-                      color: Color(0xFF115740)
+                      color: Color(0xFF115740),
+                      fontFamily: 'Poppins',
+                      fontSize: 12
                     ),
                     textAlign: TextAlign.end,
                   ),

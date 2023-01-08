@@ -23,7 +23,7 @@ class MainHeading                                                               
               style: TextStyle(
                 color: Color(0xFF115740),
                 fontSize: 40,
-                fontFamily: 'Montserrat',
+                fontFamily: 'Poppins',
                 fontWeight: FontWeight.bold,
               ),
             ),

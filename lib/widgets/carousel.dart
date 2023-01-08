@@ -28,12 +28,12 @@ class _MainCarouselState extends State<MainCarousel> {
   ];
 
   final List<String> places = [
-    'ASIA',
-    'AFRICA',
-    'EUROPE',
-    'SOUTH AMERICA',
-    'AUSTRALIA',
-    'ANTARCTICA',
+    'Hi-C',
+    ' Genome\nAssembly',
+    'Structural\n Variants',
+    'Pan-genome',
+    '3D-Genome\n Structures',
+    'GWAS',
   ];
 
   List<Widget> generateImageTiles(screenSize) {
@@ -88,14 +88,15 @@ class _MainCarouselState extends State<MainCarousel> {
               places[_current],
               style: TextStyle(
                 letterSpacing: 8,
-                fontFamily: 'Electrolize',
+                fontFamily: 'Poppins',
                 fontSize: screenSize.width / 25,
                 color: Colors.white,
               ),
             ),
           ),
         ),
-         screenSize.width < 800 ? Container():
+         screenSize.width < 800 ?
+         Container():
          AspectRatio( // related to showing text menu
                 aspectRatio: 17 / 8,
                 child: Center(
@@ -142,8 +143,11 @@ class _MainCarouselState extends State<MainCarousel> {
                                           places[i],
                                           style: TextStyle(
                                             color: _isHovering[i]
-                                                ? Colors.blueGrey[900]
-                                                : Colors.blueGrey,
+                                                ? Color(0xFF00965E)
+                                                : Color(0xFF115740),
+                                            fontSize: 16,
+                                              fontWeight: FontWeight.bold,
+                                              fontFamily: "Poppins"
                                           ),
                                         ),
                                       ),
@@ -159,7 +163,7 @@ class _MainCarouselState extends State<MainCarousel> {
                                         child: Container(
                                           height: 5,
                                           decoration: BoxDecoration(
-                                            color: Colors.blueGrey,
+                                            color: Color(0xFFF6921E),
                                             borderRadius: BorderRadius.all(
                                               Radius.circular(10),
                                             ),

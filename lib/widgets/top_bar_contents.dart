@@ -36,13 +36,13 @@ class _TopBarContentsState extends State<TopBarContents> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    SizedBox(width: screenSize.width/4,),
+                    SizedBox(width: screenSize.width/60),
                     Text(
-                      'ROMANS',
+                      'Distilled Child',
                       style: TextStyle(
                         color: Color(0xFF115740),
-                        fontSize: 26,
-                        fontFamily: 'Raleway',
+                        fontSize: 36,
+                        fontFamily: 'Poppins',
                         fontWeight: FontWeight.w900,
                         letterSpacing: 3,
                       ),
@@ -61,13 +61,14 @@ class _TopBarContentsState extends State<TopBarContents> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Text(
-                            'Home',
+                            'HOME',
                             style: TextStyle(
                                 color: _isHovering[0]
                                     ? Color(0xFF00965E)
                                     : Color(0xFF115740),
                                 fontWeight: FontWeight.bold,
-                                fontSize: 16
+                                fontSize: 17,
+                                fontFamily: 'Poppins',
                             ),
                           ),
                           SizedBox(height: 5),
@@ -99,13 +100,14 @@ class _TopBarContentsState extends State<TopBarContents> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Text(
-                            'About',
+                            'ABOUT',
                             style: TextStyle(
                                 color: _isHovering[1]
                                     ? Color(0xFF00965E)
                                     : Color(0xFF115740),
                                 fontWeight: FontWeight.bold,
-                                fontSize: 16
+                                fontSize: 17,
+                                fontFamily: 'Poppins'
                             ),
                           ),
                           SizedBox(height: 5),
@@ -137,13 +139,14 @@ class _TopBarContentsState extends State<TopBarContents> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Text(
-                            'History',
+                            'RESEARCH',
                             style: TextStyle(
                                 color: _isHovering[2]
                                     ? Color(0xFF00965E)
                                     : Color(0xFF115740),
                                 fontWeight: FontWeight.bold,
-                                fontSize: 16
+                                fontSize: 17,
+                                fontFamily: 'Poppins'
                             ),
                           ),
                           SizedBox(height: 5),
@@ -175,13 +178,14 @@ class _TopBarContentsState extends State<TopBarContents> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Text(
-                            'Contact',
+                            'CONTACT',
                             style: TextStyle(
                                 color: _isHovering[3]
                                     ? Color(0xFF00965E)
                                     : Color(0xFF115740),
                                 fontWeight: FontWeight.bold,
-                                fontSize: 16
+                                fontSize: 17,
+                                fontFamily: 'Poppins'
                             ),
                           ),
                           SizedBox(height: 5),

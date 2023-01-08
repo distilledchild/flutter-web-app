@@ -1,5 +1,6 @@
 import 'package:flutter_web/widgets/responsive.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class FloatingQuickAccessBar extends StatefulWidget {
   const FloatingQuickAccessBar({
@@ -17,7 +18,7 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
   List _isHovering = [false, false, false, false];
   List<Widget> rowElements = [];
 
-  List<String> items = ['History', 'Science', 'Philosophy', 'Novels'];
+  List<String> items = ['HiC Analysis', 'Genome Assembly', 'SV Calling', 'Programming'];
   List<IconData> icons = [
     Icons.location_on,
     Icons.date_range,
@@ -43,6 +44,8 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
           style: TextStyle(
             color: _isHovering[i] ? Color(0xFFF6921E) : Color(0xFF115740),
             fontWeight: FontWeight.bold,
+            fontSize: 15,
+            fontFamily: 'Poppins'
           ),
         ),
       );
@@ -51,7 +54,7 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
         child: VerticalDivider(
           width: 1,
           color: Colors.blueGrey[100],
-          thickness: 1,
+          thickness: 2,
         ),
       );
       rowElements.add(elementTile);
@@ -78,6 +81,8 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
               ? widget.screenSize.width / 12
               : widget.screenSize.width / 5,
         ),
+
+
         // responsive for mobile device
         child: widget.screenSize.width < 800 ? Column(
           children: [
@@ -110,8 +115,17 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
                           onTap: () {},
                           child: Text(
                             items[i],
-                            style: TextStyle(
-                              color: _isHovering[i]? Colors.blueGrey[90]: Colors.blueGrey,
+                            // style: TextStyle(
+                            //   color: _isHovering[i]? Colors.blueGrey[90]: Colors.blueGrey,
+                            //   fontFamily: 'Poppins',
+                            //   fontSize: _isHovering[i]? 12: 14,
+                            // )
+                            style: GoogleFonts.poppins(
+                              textStyle: Theme.of(context).textTheme.bodyMedium,
+                              color: _isHovering[i]? Color(0xFFF6921E): Color(0xFF115740),
+                              fontSize: 14,
+                              fontWeight: FontWeight.normal,
+                              fontStyle: FontStyle.normal,
                             )
                           ),
                         ),

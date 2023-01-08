@@ -14,6 +14,7 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   carousel_slider: ^4.0.0-nullsafety.0
+  google_fonts: ^3.0.1
   http:
   shared_preferences: ^2.0.0-nullsafety
   chewie: ^1.2.2
@@ -22,6 +23,9 @@ dependencies:
   sqlite3_flutter_libs: ^0.5.12
   path_provider: ^2.0.11
   path: ^1.8.2
+  get: ^4.6.5
+  charts_flutter: ^0.12.0
+  data_table_2: ^2.3.10
 
 dev_dependencies:
   moor_generator: ^4.6.0+1
@@ -40,6 +44,10 @@ flutter:
     - family: Electrolize
       fonts:
         - asset: fonts/Electrolize-Regular.ttf
+
+    - family: Poppins
+      fonts:
+        - asset: fonts/poppins/Poppins-Light.ttf
 
   assets:
     - assets/images/

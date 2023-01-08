@@ -1,7 +1,10 @@
+import 'dart:ui';
+
 import 'package:flutter_web/widgets/bottom_bar_column.dart';
 import 'package:flutter_web/widgets/info_text.dart';
 import 'package:flutter_web/widgets/responsive.dart';
 import 'package:flutter/material.dart';
+import 'package:path/path.dart';
 
 // no dynamic, so statelessWidget
 class BottomBar extends StatelessWidget {
@@ -10,8 +13,9 @@ class BottomBar extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
-  static const Color gradientStartColor = Color(0xff11998e);
-  static const Color gradientEndColor = Color(0xff0575E6);
+  static const Color gradientStartColor = Color(0xFF00965E);
+  // static const Color gradientMiddleColor = Color(0xFF00965E);
+  static const Color gradientEndColor = Color(0xFFF6921E);
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +25,10 @@ class BottomBar extends StatelessWidget {
         gradient: LinearGradient(
               colors: [
                 gradientStartColor,
+                // gradientMiddleColor,
                 gradientEndColor
               ],
-              begin: const FractionalOffset(0.2, 0.2),
+              begin: const FractionalOffset(0.1, 0.1),
               end: const FractionalOffset(1.0, 1.0),
               stops: [0.0, 1.0],
               tileMode: TileMode.clamp),
@@ -72,13 +77,19 @@ class BottomBar extends StatelessWidget {
             children: [
               InfoText(
                 type: 'Email',
-                text: 'dylan@gmail.com',
+                text: 'pkim11@uthsc.edu',
+                style: TextStyle(
+                  fontFamily: 'Poppins'
+                ),
               ),
               SizedBox(height: 5),
 
               InfoText( // widget provided by Dart
                 type: 'Address',
-                text: '128, Trymore Road, Delft, MN - 56124',
+                text: '910 Madison Ave, Memphis, TN 38163',
+                style: TextStyle(
+                  fontFamily: 'Poppins'
+                ),
               ),
             ],
           ),
@@ -94,6 +105,7 @@ class BottomBar extends StatelessWidget {
             style: TextStyle(
               color: Colors.white,
               fontSize: 14,
+              fontFamily: 'Poppins'
               // fontWeight: FontWeight.normal
             ),
           ),
@@ -138,14 +150,20 @@ class BottomBar extends StatelessWidget {
 
                         InfoText(
                           type: 'Email',
-                          text: 'dylan@gmail.com',
+                          text: 'pkim11@uthsc.edu',
+                          style: TextStyle(
+                            fontFamily: 'Poppins'
+                          ),
                         ),
 
                         SizedBox(height: 5),
 
                         InfoText( // widget provided by Dart
                           type: 'Address',
-                          text: '128, Trymore Road, Delft, MN - 56124',
+                          text: '910 Madison Ave, Memphis, TN 38163',
+                          style: TextStyle(
+                            fontFamily: 'Poppins'
+                          ),
                         )
 
                       ],
