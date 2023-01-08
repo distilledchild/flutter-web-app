@@ -8,12 +8,15 @@ import 'package:flutter_web/widgets/menu_drawer.dart';
 import 'package:flutter_web/widgets/top_bar_contents.dart';
 import 'package:flutter/material.dart';
 
+// scrollController -> Stateful
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+  ////////////////////////////////////////////////////////
+  // using scrollController for SPA
   final ScrollController _scrollController = ScrollController();
   double _scrollPosition = 0;
   double _opacity = 0;
@@ -25,26 +28,52 @@ class _HomePageState extends State<HomePage> {
       _scrollPosition = _scrollController.position.pixels;
     });
   }
-
   @override
   void initState() {
     _scrollController.addListener(_scrollListener);
     super.initState();
   }
+  //////////////////////////////////////////////////////
+  // Theses are almost set
+  //////////////////////////////////////////////////////
 
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
+
     _opacity = _scrollPosition < screenSize.height * 0.40
         ? _scrollPosition / (screenSize.height * 0.40)
         : 1;
       debugPrint(_opacity.toString());
+
+      // a scaffold is a visual structure that consists of a top app bar, a bottom navigation bar, and a body.
     return Scaffold(
       extendBodyBehindAppBar: true, // overlap center image and app bar, so extend body image up to screen top
-      appBar: PreferredSize(
-        preferredSize: Size(screenSize.width, 70),
-        child: TopBarContents(_opacity),
-      ),
+      // property for scaffold: appbar
+      // 800 px is for typical mobile device
+        appBar: screenSize.width < 800 ? AppBar(
+          // iconThem is only for hamburger menu
+          iconTheme: IconThemeData(color: Color(0xFFF6921E)),
+          elevation: 0,
+          backgroundColor: Colors.white.withOpacity(_opacity),
+          centerTitle: true,
+          title: Text(
+            'ROMANS',
+            style: TextStyle(
+              color: Color(0xFF115740),
+              fontSize: 26,
+              fontFamily: 'Raleway',
+              fontWeight: FontWeight.w900,
+              letterSpacing: 3,
+            ),
+          ),
+        ): PreferredSize(preferredSize: Size(screenSize.width, 70),
+          // Class topbarcontents
+          child: TopBarContents(_opacity),
+        ),
+      // drawer is for showing menu in mobile device, and it is hidden in desktop
+      drawer: MenuDrawer(),
+
       body: SingleChildScrollView( // making scrollable page
         // SingleChiScrollView has controller
         controller: _scrollController, // This must be added
@@ -52,6 +81,7 @@ class _HomePageState extends State<HomePage> {
             children: [
               Stack(
                 children: [
+                  // in stack widget, A container for image, and a column for multiple widgets
                   Container(
                     child: SizedBox(
                       height: screenSize.height * 0.65,
@@ -63,7 +93,9 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
 
+                  // inside of stack, they should be overlapping, but not due to padding
                   Column(
+                    // inside of column, children are NOT overlapping by stack!. working like independent in column from stack despite stack.
                     children: [
                       FloatingQuickAccessBar(screenSize: screenSize),
                       FeaturedHeading(screenSize: screenSize),

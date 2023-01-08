@@ -20,59 +20,57 @@ class FeaturedTiles extends StatelessWidget {
   @override
   // whenever change screen, build() is fired
   Widget build(BuildContext context) {
-    return
-      /*
-      ResponsiveWidget.isSmallScreen(context)
-        ? Padding(
-            padding: EdgeInsets.only(top: screenSize.height / 50),
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
+    return screenSize.width < 800?
+    Padding(
+      padding: EdgeInsets.only(
+        top: screenSize.height/50,
+        left: screenSize.width/15 //Both are fine either here or line33
+      ),
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: [
+            // SizedBox(width: screenSize.width/15,), // only once
+            ...Iterable<int>.generate(assets.length).map(
+              (int pageIndex) => Row(
                 children: [
-                  SizedBox(width: screenSize.width / 15),
-                  ...Iterable<int>.generate(assets.length).map(
-                    (int pageIndex) => Row(
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(
-                              height: screenSize.width / 2.5,
-                              width: screenSize.width / 1.5,
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(5.0),
-                                child: Image.asset(
-                                  assets[pageIndex],
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(
-                                top: screenSize.height / 70,
-                              ),
-                              child: Text(
-                                title[pageIndex],
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontFamily: 'Montserrat',
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            ),
-                          ],
+                  Column(
+                    children: [
+                      SizedBox(
+                        height: screenSize.width/2.5,
+                        width: screenSize.width/1.5,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(5.0),
+                          child: Image.asset(
+                            assets[pageIndex],
+                            fit: BoxFit.cover, //making image as big as it is
+                          ),
                         ),
-                        SizedBox(width: screenSize.width / 15),
-                      ],
-                    ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(
+                        top: screenSize.height/70
+                        ),
+                        child: Text(
+                          title[pageIndex],
+                          style: TextStyle(
+                            color: Color(0xFF115740),
+                            fontFamily: "Montserrat",
+                              fontWeight: FontWeight.w500
+                          ),
+                        ),
+                      )
+                    ],
                   ),
+                  SizedBox(width: screenSize.width/15,),
                 ],
-              ),
-            ),
-          )
-        : */
-      Padding(
+              )
+            )
+          ],
+        ),
+      ),
+    ):
+    Padding(
             padding: EdgeInsets.only(
               // whenever change screen, build() is fired
               // responsive padding setting
@@ -83,14 +81,11 @@ class FeaturedTiles extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-
                 // dynamic widget generate: Iterable.generate
                 // ... means all elements of list for Iterable
                 ...Iterable<int>.generate(assets.length).map(
                   (int pageIndex) => Column(
                     children: [
-
-
 
                       SizedBox(
                         // dynamic
@@ -121,26 +116,71 @@ class FeaturedTiles extends StatelessWidget {
                       ),
 
 
-
-                      // padding between image and text
-                      Padding(
-                        padding: EdgeInsets.only(
-                          top: screenSize.height / 70,
-                        ),
-                        child: Text(
-                          title[pageIndex],
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontFamily: 'Montserrat',
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
+                    //   screenSize.width < 800? Padding(
+                    //     padding: EdgeInsets.only(
+                    //       top: screenSize.height/50
+                    //     ),
+                    //     child: SingleChildScrollView(
+                    //       scrollDirection: Axis.horizontal,
+                    //       child: Row(
+                    //         children: [
+                    //           SizedBox(width: screenSize.width/25,), //left padding is needed only ONCE
+                    //           ...Iterable<int>.generate(assets.length).map(
+                    //             (int pageIndex) => Row(
+                    //               children: [
+                    //                 Column(
+                    //                   crossAxisAlignment: CrossAxisAlignment.start,
+                    //                   children: [
+                    //                     SizedBox(
+                    //                       height: screenSize.width/2.5,
+                    //                       width: screenSize.width/1.5,
+                    //                       child: ClipRRect(
+                    //                         borderRadius: BorderRadius.circular(5.0),
+                    //                         child: Image.asset(
+                    //                           assets[pageIndex],
+                    //                           fit: BoxFit.cover,
+                    //                         ),
+                    //                       ),
+                    //                     ),
+                    //                     Padding(
+                    //                       padding: EdgeInsets.only(
+                    //                         top:screenSize.height/70,
+                    //                       ),
+                    //                       child: Text(
+                    //                         title[pageIndex],
+                    //                         style: TextStyle(
+                    //                           fontSize: 16,
+                    //                           fontFamily: "Montserrat",
+                    //                           fontWeight: FontWeight.w500
+                    //                         ),
+                    //                       ),
+                    //                     )
+                    //                   ],
+                    //                 ),
+                    //                 SizedBox(width: screenSize.width/15,),
+                    //               ],
+                    //
+                    //             )
+                    //           )
+                    //         ],
+                    //       ),
+                    //     ),
+                    //   ):
+                    //   // padding between image and text
+                    //   Padding(
+                    //     padding: EdgeInsets.only(
+                    //       top: screenSize.height / 70,
+                    //     ),
+                    //     child: Text(
+                    //       title[pageIndex],
+                    //       style: TextStyle(
+                    //         fontSize: 16,
+                    //         fontFamily: 'Montserrat',
+                    //         fontWeight: FontWeight.w500,
+                    //       ),
+                    //     ),
+                    //   ),
                     ],
-
-
-
-
                   ),
                 ),
               ],

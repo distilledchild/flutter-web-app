@@ -16,9 +16,9 @@ class BottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(0.0)),
-          gradient: LinearGradient(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(0.0)),
+        gradient: LinearGradient(
               colors: [
                 gradientStartColor,
                 gradientEndColor
@@ -29,14 +29,78 @@ class BottomBar extends StatelessWidget {
               tileMode: TileMode.clamp),
           // chose decorating botomBar or just use color below
           // color: Colors.orange
-        ),
-
-
+      ),
       padding: EdgeInsets.all(30), // due to this padding, divider is NOT completely stretched.
       // padding: EdgeInsets.all(0),
       //color: Colors.blueGrey[900],
+      child:
+      // how to get screen size
+      MediaQuery.of(context).size.width < 800 ?
+      Column(
+        children: [
+          Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceAround, // evenly
+            children: [
+              BottomBarColumn( // Constructor for BottomBarColumn in BottomBarColumn.dart
+                heading: 'ABOUT',
+                s1: 'Contact Us',
+                s2: 'About Us',
+                s3: 'Careers',
+              ),
+              BottomBarColumn( // Constructor for BottomBarColumn in BottomBarColumn.dart
+                heading: 'HELP',
+                s1: 'Payment',
+                s2: 'Cancellation',
+                s3: 'FAQ',
+              ),
+              BottomBarColumn( // Constructor for BottomBarColumn in BottomBarColumn.dart
+                heading: 'SOCIAL',
+                s1: 'Twitter',
+                s2: 'Facebook',
+                s3: 'Instagram',
+              ),
+            ]
+          ),
+          SizedBox(height: 5,),
+          Divider(
+            color: Colors.white60,
+          ),
+          SizedBox(height: 5,),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              InfoText(
+                type: 'Email',
+                text: 'dylan@gmail.com',
+              ),
+              SizedBox(height: 5),
 
-      child: Column(
+              InfoText( // widget provided by Dart
+                type: 'Address',
+                text: '128, Trymore Road, Delft, MN - 56124',
+              ),
+            ],
+          ),
+
+          SizedBox(height: 5,),
+          Divider(
+            color: Colors.white60,
+          ),
+          SizedBox(height: 20,),
+
+          Text(
+            'Copyright © 2021 | DBestech',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 14,
+              // fontWeight: FontWeight.normal
+            ),
+          ),
+        ],
+      ):
+          // if screenSize is bigger than 800 px
+      Column(
               children: [
                 Row(
                   mainAxisSize: MainAxisSize.max,
@@ -94,11 +158,9 @@ class BottomBar extends StatelessWidget {
                 Divider(
                   color: Colors.white,
                 ),
-
-
                 // to give padding to bottom text and divider USING SizedBox
                 // padding gives space to ALL edges, but sizedboxe gives padding in column
-                SizedBox(height: 20),
+                SizedBox(height: 30),
 
 
                 Text(
@@ -106,6 +168,7 @@ class BottomBar extends StatelessWidget {
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 14,
+                    // fontWeight: FontWeight.normal
                   ),
                 ),
               ],

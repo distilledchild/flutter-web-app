@@ -18,7 +18,37 @@ class FeaturedHeading extends StatelessWidget {
         left: screenSize.width / 15,
         right: screenSize.width / 15,
       ),
-      child:  Row(
+      // responsive for mobile
+      child: screenSize.width < 800 ?
+        // row is used for pushing text left
+      Row(
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Featured',
+                style: TextStyle(
+                    fontSize: 36,
+                    fontFamily: 'Raleway',
+                    fontWeight: FontWeight.bold,
+                    color:Color(0xFF115740)
+                ),
+              ),
+              SizedBox(height: 5,),
+              Text(
+                'Clue of the wooden cottage',
+                style: TextStyle(
+                  color: Color(0xFFF6921E)
+                ),
+              ),
+            ]
+
+
+          ),
+        ],
+      ):  Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -34,6 +64,9 @@ class FeaturedHeading extends StatelessWidget {
                 Expanded(
                   child: Text(
                     'Clue of the wooden cottage',
+                    style: TextStyle(
+                      color: Color(0xFF115740)
+                    ),
                     textAlign: TextAlign.end,
                   ),
                 ),

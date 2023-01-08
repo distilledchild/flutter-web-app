@@ -1,4 +1,4 @@
-import 'package:carousel_slider/carousel_controller.dart';
+// import 'package:carousel_slider/carousel_controller.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_web/widgets/responsive.dart';
 import 'package:flutter/material.dart';
@@ -64,7 +64,7 @@ class _MainCarouselState extends State<MainCarousel> {
             //check the difference for each functions, enlargeCenterPage
               enlargeCenterPage: true,
               aspectRatio: 18 / 8,
-              // autoPlay: true,
+              autoPlay: true,
               onPageChanged: (index, reason) {
                 setState(() {
                   debugPrint(index.toString());
@@ -95,6 +95,7 @@ class _MainCarouselState extends State<MainCarousel> {
             ),
           ),
         ),
+         screenSize.width < 800 ? Container():
          AspectRatio( // related to showing text menu
                 aspectRatio: 17 / 8,
                 child: Center(

@@ -41,7 +41,8 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
         child: Text(
           items[i],
           style: TextStyle(
-            color: _isHovering[i] ? Colors.blueGrey[900] : Colors.blueGrey,
+            color: _isHovering[i] ? Color(0xFFF6921E) : Color(0xFF115740),
+            fontWeight: FontWeight.bold,
           ),
         ),
       );
@@ -77,7 +78,50 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
               ? widget.screenSize.width / 12
               : widget.screenSize.width / 5,
         ),
-        child: Card(
+        // responsive for mobile device
+        child: widget.screenSize.width < 800 ? Column(
+          children: [
+            for (int i = 0; i < items.length; i++)
+              Padding(
+                padding: EdgeInsets.only(
+                  bottom: widget.screenSize.height/40,
+                ),
+                child: Card(
+                  elevation: 4,
+                  child: Padding(
+                    padding: EdgeInsets.only(
+                      top:widget.screenSize.height/45,
+                      bottom: widget.screenSize.height/45,
+                      left: widget.screenSize.width/30,
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(icons[i],
+                        color: Color(0xFF115740),),
+                        SizedBox(width: widget.screenSize.width/50,), // responsive sizedbox
+                        InkWell(
+                          splashColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          onHover: (value) {
+                            setState(() {
+                              value ? _isHovering[i] = true : _isHovering[i] = false;
+                            });
+                            },
+                          onTap: () {},
+                          child: Text(
+                            items[i],
+                            style: TextStyle(
+                              color: _isHovering[i]? Colors.blueGrey[90]: Colors.blueGrey,
+                            )
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+          ],
+        ): Card(
           elevation: 5,
           child: Padding(
             padding: EdgeInsets.only(

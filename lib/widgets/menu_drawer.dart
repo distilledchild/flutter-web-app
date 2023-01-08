@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MenuDrawer extends StatelessWidget {
+
   const MenuDrawer({
     Key? key,
   }) : super(key: key);
@@ -9,7 +10,7 @@ class MenuDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color: Color(0xFF6158e6),
+        color: Color(0xFFF6921E),
         child: Padding(
 
           padding: const EdgeInsets.all(16.0),
@@ -20,14 +21,16 @@ class MenuDrawer extends StatelessWidget {
               InkWell(
                 onTap: () {},
                 child: Text(
-                  'Login',
-                  style: TextStyle(color: Colors.white, fontSize: 22),
+                  'Home',
+                  style: TextStyle(color: Color(0xFF00965E), fontSize: 22),
                 ),
               ),
               Padding(
+                // top and bottom only, right?
                 padding: const EdgeInsets.only(top: 5.0, bottom: 5.0),
+                // padding used for divider
                 child: Divider(
-                  color: Colors.blueGrey.shade400,
+                  color: Colors.white.withOpacity(0.5),
                   thickness: 2,
                 ),
               ),
@@ -35,27 +38,31 @@ class MenuDrawer extends StatelessWidget {
                 onTap: () {},
                 child: Text(
                   'Sign Up',
-                  style: TextStyle(color: Colors.white, fontSize: 22),
+                  style: TextStyle(color: Color(0xFF00965E), fontSize: 22),
                 ),
               ),
               Padding(
+                // top and bottom only, right?
                 padding: const EdgeInsets.only(top: 5.0, bottom: 5.0),
+                // padding used for divider
                 child: Divider(
-                  color: Colors.blueGrey.shade400,
+                  color: Colors.white.withOpacity(0.5),
                   thickness: 2,
                 ),
               ),
+              // Inkwell for tapping event
+              // without Inkwell, hover over effect cannot be used
               InkWell(
                 onTap: () {},
                 child: Text(
                   'Read',
-                  style: TextStyle(color: Colors.white, fontSize: 22),
+                  style: TextStyle(color: Color(0xFF00965E), fontSize: 22),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 5.0, bottom: 5.0),
                 child: Divider(
-                  color: Colors.blueGrey.shade400,
+                  color: Colors.white.withOpacity(0.5),
                   thickness: 2,
                 ),
               ),
@@ -63,16 +70,17 @@ class MenuDrawer extends StatelessWidget {
                 onTap: () {},
                 child: Text(
                   'Contact Us',
-                  style: TextStyle(color: Colors.white, fontSize: 22),
+                  style: TextStyle(color: Color(0xFF00965E), fontSize: 22),
                 ),
               ),
               Expanded(
+                // default is top alignment
                 child: Align(
                   alignment: Alignment.bottomCenter,
                   child: Text(
                     'Copyright © 2021 | DBestech',
                     style: TextStyle(
-                      color: Colors.blueGrey.shade300,
+                      color: Color(0xFF115740),
                       fontSize: 14,
                     ),
                   ),

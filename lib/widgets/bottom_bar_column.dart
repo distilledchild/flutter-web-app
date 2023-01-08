@@ -25,7 +25,6 @@ class BottomBarColumn extends StatelessWidget {
             style: TextStyle(
               color: Colors.white,
               fontSize: 18,
-              fontWeight: FontWeight.w500,
             ),
           ),
           SizedBox(
@@ -36,7 +35,6 @@ class BottomBarColumn extends StatelessWidget {
             style: TextStyle(
               color: Colors.white,
               fontSize: 18,
-              fontWeight: FontWeight.w500,
             ),
           ),
           SizedBox(
@@ -47,7 +45,6 @@ class BottomBarColumn extends StatelessWidget {
             style: TextStyle(
               color: Colors.white,
               fontSize: 18,
-              fontWeight: FontWeight.w500,
             ),
           ),
           SizedBox(
@@ -58,7 +55,6 @@ class BottomBarColumn extends StatelessWidget {
             style: TextStyle(
               color: Colors.white,
               fontSize: 18,
-              fontWeight: FontWeight.w500,
             ),
           ),
         ],
