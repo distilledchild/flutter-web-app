@@ -21,7 +21,7 @@ class InfoText extends StatelessWidget {
           ),
         ),
         Flexible(
-          child: Text(
+          child: Text( // vs. SelectableText
             text,
             style: TextStyle(
               color: Colors.white,

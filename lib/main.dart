@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web/screens/layout.dart';
+import 'package:flutter_web/screens/test_home.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:get/get.dart';
+
 
 import 'screens/home_page.dart';
 
@@ -10,7 +14,8 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
+    // return MaterialApp(
       title: 'Distilled Child',
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -29,7 +34,9 @@ class MyApp extends StatelessWidget {
         primaryColor: Color(0xFF115740)
       ),
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      // home: HomePage(),
+      // home: SiteLayout(),
+      home: TestHomeScreen(), //getX test
     );
   }
 }

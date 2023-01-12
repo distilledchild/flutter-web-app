@@ -20,7 +20,7 @@ class MenuDrawer extends StatelessWidget {
             children: [
               InkWell(
                 onTap: () {},
-                child: Text(
+                child: Text( // vs. SelectableText
                   'Home',
                   style: TextStyle(color: Color(0xFF00965E), fontSize: 22),
                 ),
@@ -36,7 +36,7 @@ class MenuDrawer extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {},
-                child: Text(
+                child: Text( // vs. SelectableText
                   'Sign Up',
                   style: TextStyle(color: Color(0xFF00965E), fontSize: 22),
                 ),
@@ -54,7 +54,7 @@ class MenuDrawer extends StatelessWidget {
               // without Inkwell, hover over effect cannot be used
               InkWell(
                 onTap: () {},
-                child: Text(
+                child: Text( // vs. SelectableText
                   'Read',
                   style: TextStyle(color: Color(0xFF00965E), fontSize: 22),
                 ),
@@ -68,7 +68,7 @@ class MenuDrawer extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {},
-                child: Text(
+                child: Text( // vs. SelectableText
                   'Contact Us',
                   style: TextStyle(color: Color(0xFF00965E), fontSize: 22),
                 ),
@@ -77,7 +77,7 @@ class MenuDrawer extends StatelessWidget {
                 // default is top alignment
                 child: Align(
                   alignment: Alignment.bottomCenter,
-                  child: Text(
+                  child: Text( // vs. SelectableText
                     'Copyright © 2021 | DBestech',
                     style: TextStyle(
                       color: Color(0xFF115740),

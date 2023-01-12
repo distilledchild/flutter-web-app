@@ -17,7 +17,7 @@ class MainHeading                                                               
               bottom: screenSize.height / 15,
             ),
             width: screenSize.width,
-            child: Text(
+            child: Text( // vs. SelectableText
               'Knowledge diversity',
               textAlign: TextAlign.center,
               style: TextStyle(

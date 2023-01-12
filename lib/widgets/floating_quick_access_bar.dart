@@ -39,7 +39,7 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
           });
         },
         onTap: () {},
-        child: Text(
+        child: Text(  // vs. SelectableText
           items[i],
           style: TextStyle(
             color: _isHovering[i] ? Color(0xFFF6921E) : Color(0xFF115740),
@@ -113,7 +113,7 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
                             });
                             },
                           onTap: () {},
-                          child: Text(
+                          child: Text( // vs. SelectableText
                             items[i],
                             // style: TextStyle(
                             //   color: _isHovering[i]? Colors.blueGrey[90]: Colors.blueGrey,

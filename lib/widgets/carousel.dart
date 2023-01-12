@@ -84,7 +84,7 @@ class _MainCarouselState extends State<MainCarousel> {
         AspectRatio(
           aspectRatio: 18 / 8,
           child: Center( // make text in the center
-            child: Text(
+            child: Text( // vs. SelectableText
               places[_current],
               style: TextStyle(
                 letterSpacing: 8,
@@ -139,7 +139,7 @@ class _MainCarouselState extends State<MainCarousel> {
                                         padding: EdgeInsets.only(
                                             top: screenSize.height / 80,
                                             bottom: screenSize.height / 90),
-                                        child: Text(
+                                        child: Text( // vs. SelectableText
                                           places[i],
                                           style: TextStyle(
                                             color: _isHovering[i]

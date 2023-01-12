@@ -8,7 +8,9 @@ import 'package:flutter_web/widgets/menu_drawer.dart';
 import 'package:flutter_web/widgets/top_bar_contents.dart';
 import 'package:flutter/material.dart';
 
+//////////////////////////////////////////////////////////
 // layout.dart
+//////////////////////////////////////////////////////////
 
 // scrollController -> Stateful
 class HomePage extends StatefulWidget {
@@ -66,7 +68,7 @@ class _HomePageState extends State<HomePage> {
               color: Color(0xFF115740),
               fontSize: 26,
               fontFamily: 'Poppins',
-              fontWeight: FontWeight.w900,
+              fontWeight: FontWeight.bold,
               letterSpacing: 3,
             ),
           ),

@@ -51,7 +51,7 @@ class FeaturedTiles extends StatelessWidget {
                         padding: EdgeInsets.only(
                         top: screenSize.height/70
                         ),
-                        child: Text(
+                        child: Text( // vs. SelectableText
                           title[pageIndex],
                           style: TextStyle(
                             color: Color(0xFF115740),

@@ -52,7 +52,7 @@ class FeaturedHeading extends StatelessWidget {
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Text(
+                Text( // vs. SelectableText
                 'Featured',
                 style: TextStyle(
                     fontSize: 36,
@@ -62,7 +62,7 @@ class FeaturedHeading extends StatelessWidget {
                     ),
                 ),
                 Expanded(
-                  child: Text(
+                  child: Text( // vs. SelectableText
                     'Top priorities',
                     style: TextStyle(
                       color: Color(0xFF115740),

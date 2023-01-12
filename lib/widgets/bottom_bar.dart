@@ -13,8 +13,8 @@ class BottomBar extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
-  static const Color gradientStartColor = Color(0xFF00965E);
-  // static const Color gradientMiddleColor = Color(0xFF00965E);
+  static const Color gradientStartColor = Color(0xFF115740);
+  static const Color gradientMiddleColor = Color(0xFF00965E);
   static const Color gradientEndColor = Color(0xFFF6921E);
 
   @override
@@ -25,12 +25,12 @@ class BottomBar extends StatelessWidget {
         gradient: LinearGradient(
               colors: [
                 gradientStartColor,
-                // gradientMiddleColor,
+                gradientMiddleColor,
                 gradientEndColor
               ],
-              begin: const FractionalOffset(0.1, 0.1),
-              end: const FractionalOffset(1.0, 1.0),
-              stops: [0.0, 1.0],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              stops: [0.1, 0.3, 1],
               tileMode: TileMode.clamp),
           // chose decorating botomBar or just use color below
           // color: Colors.orange

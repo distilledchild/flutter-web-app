@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class SmallScreen extends StatelessWidget{
+class MediumScreen extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
 
