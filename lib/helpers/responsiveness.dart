@@ -20,6 +20,7 @@ class ResponsiveWidget extends StatelessWidget {
         // required this.customScreen,
       }): super(key:key);
 
+  // screen size decision
   static bool isSmallScreen(BuildContext context) =>
       MediaQuery.of(context).size.width < smallScreenSize;
 
@@ -36,6 +37,7 @@ class ResponsiveWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // which screen should builder return?
     return LayoutBuilder(builder: (context, constraints){
       double _width = constraints.maxWidth;
       if(_width >= largeScreenSize){

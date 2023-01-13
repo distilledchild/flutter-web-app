@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web/layout.dart';
+import 'package:flutter_web/screens/layout.dart';
 import 'package:flutter_web/screens/test_home.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
@@ -17,25 +17,29 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp( // for getX instead of MaterialApp
-      debugShowMaterialGrid: false,
+    return GetMaterialApp( // for getX
+    // return MaterialApp(
       title: 'Distilled Child',
       theme: ThemeData(
-          scaffoldBackgroundColor: Colors.white,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
         textTheme: GoogleFonts.mulishTextTheme(
           Theme.of(context).textTheme
         ).apply(
-          bodyColor: Colors.black
+          bodyColor: Color(0xFF00965E)
         ),
         pageTransitionsTheme: PageTransitionsTheme(builders: {
           TargetPlatform.iOS: FadeUpwardsPageTransitionsBuilder(),
-          TargetPlatform.android: FadeUpwardsPageTransitionsBuilder()
+          TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
+          TargetPlatform.linux: FadeUpwardsPageTransitionsBuilder(),
+          TargetPlatform.windows: FadeUpwardsPageTransitionsBuilder(),
+          TargetPlatform.macOS: FadeUpwardsPageTransitionsBuilder(),
         }),
-        primaryColor: Colors.blue
+        primaryColor: Color(0xFF115740)
       ),
-      // home: SiteLayout(), //SiteLayout for /screen/layout.dart (import)
-      home: SiteLayout(), //SiteLayout for flutter_web/layout.dar (import)
       debugShowCheckedModeBanner: false,
+      // home: HomePage(),
+      // home: SiteLayout(),
+      home: TestHomeScreen(), //getX test
     );
   }
 }
